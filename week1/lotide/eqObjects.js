@@ -1,5 +1,4 @@
 import { assertEqual } from "./assertEqual.js";
-import { assertNotEqual } from "./assertNotEqual.js";
 import { eqArrays } from "./eqArrays.js";
 
 export function eqObjects(obj1, obj2) {
@@ -24,6 +23,8 @@ export function eqObjects(obj1, obj2) {
 const shirtObject = { color: "red", size: "medium" };
 const anotherShirtObject = { size: "medium", color: "red" };
 eqObjects(shirtObject, anotherShirtObject); // => true
+//We need to use that return value in combination with assertEqual to test if the function is working correctly.
+assertEqual(eqObjects(shirtObject, anotherShirtObject), true);
 
 const longSleeveShirtObject = {
 	size: "medium",
@@ -31,3 +32,4 @@ const longSleeveShirtObject = {
 	sleeveLength: "long",
 };
 eqObjects(shirtObject, longSleeveShirtObject); // => false
+assertEqual(eqObjects(shirtObject, longSleeveShirtObject), false);
