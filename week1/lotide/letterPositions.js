@@ -1,4 +1,3 @@
-import { eqArrays } from "./eqArrays";
 import { assertArraysEqual } from "./assertArraysEqual.js";
 
 export function letterPositions(sentence) {

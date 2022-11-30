@@ -1,4 +1,4 @@
-import assertEqual from "./assertEqual.js";
+import { assertEqual } from "./assertEqual.js";
 
 export function eqArrays(arr1, arr2) {
 	arr1.forEach((x, i) => {
