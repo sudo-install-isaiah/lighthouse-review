@@ -56,7 +56,7 @@ const printTracks = function (lib) {
 	}
 };
 
-printTracks(library);
+// printTracks(library);
 
 // prints a list of tracks for a given playlist, using the following format:
 // p01: Coding Music - 2 tracks
