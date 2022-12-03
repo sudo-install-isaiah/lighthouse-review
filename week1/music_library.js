@@ -41,7 +41,7 @@ const printPlaylists = function (lib) {
 	}
 };
 
-printPlaylists(library);
+// printPlaylists(library);
 
 // prints a list of all tracks, using the following format:
 // t01: Code Monkey by Jonathan Coulton (Thing a Week Three)
