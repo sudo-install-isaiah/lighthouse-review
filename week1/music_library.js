@@ -39,6 +39,20 @@ const library = {
 			);
 		}
 	},
+
+	printPlaylist: function (playlistId) {
+		let playlist = this.playlists[playlistId];
+		console.log(
+			`${playlist.id}: ${playlist.name} - ${playlist.tracks.length} tracks`
+		);
+
+		for (let track of playlist.tracks) {
+			const tracks = this.tracks[track];
+			console.log(
+				`${tracks.id}: ${tracks.name} by ${tracks.artist} (${tracks.album})`
+			);
+		}
+	},
 };
 
 /////////////////////////////
@@ -72,27 +86,27 @@ const library = {
 // 	}
 // };
 
-library.printTracks();
+// library.printTracks();
 
 // prints a list of tracks for a given playlist, using the following format:
 // p01: Coding Music - 2 tracks
 // t01: Code Monkey by Jonathan Coulton (Thing a Week Three)
 // t02: Model View Controller by James Dempsey (WWDC 2003)
-const printPlaylist = function (playlistId) {
-	let playlist = library.playlists[playlistId];
-	console.log(
-		`${playlist.id}: ${playlist.name} - ${playlist.tracks.length} tracks`
-	);
+// const printPlaylist = function (playlistId) {
+// 	let playlist = library.playlists[playlistId];
+// 	console.log(
+// 		`${playlist.id}: ${playlist.name} - ${playlist.tracks.length} tracks`
+// 	);
 
-	for (let track of playlist.tracks) {
-		const tracks = library.tracks[track];
-		console.log(
-			`${tracks.id}: ${tracks.name} by ${tracks.artist} (${tracks.album})`
-		);
-	}
-};
+// 	for (let track of playlist.tracks) {
+// 		const tracks = library.tracks[track];
+// 		console.log(
+// 			`${tracks.id}: ${tracks.name} by ${tracks.artist} (${tracks.album})`
+// 		);
+// 	}
+// };
 
-// printPlaylist("p01");
+// library.printPlaylist("p01");
 
 // adds an existing track to an existing playlist
 const addTrackToPlaylist = function (trackId, playlistId) {
