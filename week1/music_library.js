@@ -23,6 +23,14 @@ const library = {
 		p01: { id: "p01", name: "Coding Music", tracks: ["t01", "t02"] },
 		p02: { id: "p02", name: "Other Playlist", tracks: ["t03"] },
 	},
+	printPlaylists: function () {
+		for (let playlist in this.playlists) {
+			let currentPL = this.playlists[playlist];
+			console.log(
+				`${currentPL.id}: ${currentPL.name} - ${currentPL.tracks.length} tracks`
+			);
+		}
+	},
 };
 
 /////////////////////////////
@@ -32,16 +40,16 @@ const library = {
 // prints a list of all playlists, in the form:
 // p01: Coding Music - 2 tracks
 // p02: Other Playlist - 1 tracks
-const printPlaylists = function (lib) {
-	for (let playlist in lib.playlists) {
-		let currentPL = lib.playlists[playlist];
-		console.log(
-			`${currentPL.id}: ${currentPL.name} - ${currentPL.tracks.length} tracks`
-		);
-	}
-};
+// const printPlaylists = function (lib) {
+// 	for (let playlist in lib.playlists) {
+// 		let currentPL = lib.playlists[playlist];
+// 		console.log(
+// 			`${currentPL.id}: ${currentPL.name} - ${currentPL.tracks.length} tracks`
+// 		);
+// 	}
+// };
 
-// printPlaylists(library);
+library.printPlaylists(library);
 
 // prints a list of all tracks, using the following format:
 // t01: Code Monkey by Jonathan Coulton (Thing a Week Three)
@@ -114,7 +122,7 @@ const addPlaylist = function (name) {
 // printPlaylists(library);
 
 // STRETCH:
-// given a query string string, prints a list of tracks
+// given a query string, prints a list of tracks
 // where the name, artist or album contains the query string (case insensitive)
 // tip: use "string".search("tri")
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/search
