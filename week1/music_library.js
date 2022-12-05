@@ -98,10 +98,11 @@ const generateUid = function () {
 // adds a track to the library
 const addTrack = function (name, artist, album) {
 	let id = generateUid();
-	library.tracks[id] = { id: id, artist: artist, album: album };
+	library.tracks[id] = { id, name, artist, album };
 };
 
-addTrack("Marvin's Room", "Drake", "Take Care");
+// addTrack("Marvin's Room", "Drake", "Take Care");
+// printTracks(library);
 
 // adds a playlist to the library
 const addPlaylist = function (name) {};
